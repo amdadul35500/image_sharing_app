@@ -37,13 +37,10 @@ const fatchFileUrl = async (file) => {
   loading.style.display = "block";
   const formData = new FormData();
   formData.append("myfile", file);
-  const res = await fetch(
-    `https://image-sharing-app-puce.vercel.app/api/files`,
-    {
-      method: "POST",
-      body: formData,
-    }
-  );
+  const res = await fetch(`http://localhost:5000/api/files`, {
+    method: "POST",
+    body: formData,
+  });
   loading.style.display = "block";
   const data = await res.json();
   loading.style.display = "none";
@@ -79,16 +76,13 @@ emailForm.addEventListener("submit", async (e) => {
     emailFrom: emailForm.elements["from-email"].value,
   };
 
-  const response = await fetch(
-    `https://image-sharing-app-puce.vercel.app/api/files/send`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    }
-  );
+  const response = await fetch(`http://localhost:5000/api/files/send`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  });
   const data = await response.json();
 
   if (data) {
