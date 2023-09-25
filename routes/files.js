@@ -5,7 +5,6 @@ const { v4: uuid4 } = require("uuid");
 const File = require("../models/File");
 const sendMail = require("../services/emailService");
 const emailTemplate = require("../services/emailTemplate");
-const base_url = require("../base_url");
 const cloudinary = require("../cloudinary");
 let email_url = "";
 

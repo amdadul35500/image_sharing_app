@@ -5,7 +5,6 @@ const File = require("../models/File");
 router.get("/:uuid", async (req, res) => {
   try {
     const file = await File.findOne({ uuid: req.params.uuid });
-    console.log(base_url);
     if (!file) {
       res.render("download", { error: "Link has been expired!" });
     }

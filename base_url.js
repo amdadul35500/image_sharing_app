@@ -1,3 +1,3 @@
-const base_url = "http://localhost:5000";
+const base_url = "https://image-sharing-app-puce.vercel.app";
 
 module.exports = base_url;
